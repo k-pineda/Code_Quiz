@@ -7,8 +7,8 @@ var questions= [ {
     id: 1,
     question: "Commonly used data types DO Not include:",
     options: [
-    { Text:"1. Strings", isCorrect: false},
-    { Text:"2. Booleans", isCorrect:false},
+    {Text:"1. Strings", isCorrect: false},
+    {Text:"2. Booleans", isCorrect:false},
     {Text:"3. Alerts", isCorrect: true}, 
     {Text:"4. Numbers",isCorrect:false},
     ]
@@ -20,8 +20,9 @@ var questions= [ {
 }
 ]
 
-
 startQuizBtn.addEventListener("click", function (event) {
+// when button is clicked //firstPage.style.display="none"//
+//then show secondPage
 //how to connect the start quiz button to start the timer when clicked
 
 
