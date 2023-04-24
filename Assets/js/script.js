@@ -3,22 +3,26 @@ var timerEl = document.querySelector("#timer");
 var firstPage=document.querySelector(".firstPage")
 var secondPage=document.querySelector(".secondPage");
 
-var questions= [ {
-    id: 1,
-    question: "Commonly used data types DO Not include:",
-    options: [
-    {Text:"1. Strings", isCorrect: false},
-    {Text:"2. Booleans", isCorrect:false},
-    {Text:"3. Alerts", isCorrect: true}, 
-    {Text:"4. Numbers",isCorrect:false},
-    ]
-} ,
-{
-  id: 2,
-  question: "",
-  options:["",""]
+
+
+
+// step 2 - timer starts counting down from 75 seconds
+function countdown() {
+  var timeLeft = 75;
+
+  //setInterval(function)
+  var timeInterval = setInterval(function () {
+    if (timeLeft === 0) {
+      //timerEl.textContent = displayMessage();
+      clearsetInterval(timeInterval);
+    }
+
+    timeLeft--;
+
+    timerEl.textContent = "Time: " + timeLeft ;
+  }, 75000);
 }
-]
+
 
 startQuizBtn.addEventListener("click", function (event) {
 // when button is clicked //firstPage.style.display="none"//

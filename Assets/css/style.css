@@ -23,3 +23,7 @@ Button{
  float: right;
  margin-top: -35px;
 }
+
+.hide {
+  display: none;
+}
