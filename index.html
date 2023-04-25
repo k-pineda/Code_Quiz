@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
         <link rel="stylesheet" href="./Assets/css/style.css">
     </head>
     <body>
-        <div class="ScoreTimer">
-            <h3 id="highScoreLink">View Highscores</h3>
-            <h3 id="timer">Timer:</h3>
+        <div class="score-container">
+            <h3 id="highScores">View Highscores</h3>
+            <h3 id="timer"></h3>
         </div>      
     <div class="firstPage">
        <h1 id="firstPrompt">Coding Quiz Challenge</h1>
@@ -15,44 +19,25 @@
         time limit. Keep in mind that incorrect answers will penalize your scoretime by 
         ten seconds!
        </h2>
-        <button id="startbutton">Start Quiz</button>
+        <button id="startbtn">Start Quiz</button>
     </div>
-    <div class="secondPage hide">
-        <h3>Commonly used data types DO Not include:</h3>
-        <ul>
-            <li class="answers">
-                <button class="wrongAnswer1" data-answer="false">
-                    1. Strings
-                </button>
-            </li>
-            <li class="answers">
-                <button class="wrongAnswer1" data-answer="false">
-                    2. Booleans
-                </button>
-            </li>
-            <li class="answers">
-                <button id="correctAnswer1" data-answer="true">
-                    3. Alerts
-                </button>
-            </li>
-            <li> <button class="wrongAnswer1" data-answer="false">
-                4. Numbers
-            </button>
-            </li>
-        </ul>
-        <div class="correct hide">Correct!</div>
-        <div class="wrong hide">Wrong!</div>
+
+    <div class="questions-container hide">
+        <div class="question-title"></div>
+        <div class="answer-choices"></div>
+        <h2 class="correct hide">Correct!</h2>
+        <h2 class="wrong hide">Wrong!</h2>
     </div>
-    <div class="thirdPage"> 
-        
-    </div>
-    <div class="fourthPage"> 
-        
-    </div>
-    <div class="fithPage"> 
-        
+
+    <div class="all-done-container hide">
+        <h2>All Done!</h2>
+        <h3>Your Score is: <span class="final-score"></span></h3>
+        <input class="name-input" placeholder="initials">
+        <button class="submit-button">Submit</button>
     </div>
     
         <script src="./Assets/js/script.js"></script>
     </body>
 </html>
+
+

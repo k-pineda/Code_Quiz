@@ -1,7 +1,9 @@
-.firstPage{
+.firstPage,
+.questions-container,
+.all-done-container {
   margin: auto;
   width: 100%;
-  height: 100px;
+  height: 100%;
   text-align: center;
   font-size: 30px;
 }
@@ -16,12 +18,12 @@ Button{
     margin-right: 30%;
     font-size: 25px;
 }
-#highScoreLink_{
+#highScores{
  float: left;
 }
 #timer{
  float: right;
- margin-top: -35px;
+ /*margin-top: -35px;*/
 }
 
 .hide {
