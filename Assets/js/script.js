@@ -1,5 +1,5 @@
 var timerEl = document.getElementById("timer");
-var timeLeft= 60;
+var timeLeft= 75;
 timerEl.textContent = "Time: " + timeLeft ;
 
 var scoreContainerEl=document.querySelector(".score-container");
@@ -81,14 +81,12 @@ function countdown() {
     if (timeLeft <= 0) {
       timerEl.textContent = "";
       clearInterval(timeInterval);
-      displayMessage();
+      allDoneContainerEl.removeAttribute("class","hide"); //timer hits 0 remove hide from alldone container
     }
-    console.log(timeLeft)
   }, 1000);
 }
 
 var questionIndex=0;
-// a function that will select current question from the var questions bank and display content 
 function questionsContainer () {
   displayCurrentQuestion=questions[questionIndex]
   questionTitle.textContent=displayCurrentQuestion.title
@@ -106,21 +104,37 @@ function questionsContainer () {
 function checkAnswer(){
   if(this.value === "true"){
     console.log("correct")
-    //remove hide from correct for 2 seconds and rehide (setTimeout)
+    //remove hide from correct for 2 seconds and rehide (setTimeout) 
+    correctUserChoice.removeAttribute("class", "hide")
+    correctTimeout=setTimeout("correct", 2000)
+    //correctUserChoice.setAttribute("class","hide")
   }
   else{
     console.log("nope")
+    wrongUserChoice.removeAttribute("class", "hide")
+    wrongTimeout=setTimeout("wrong", 1000)
+    //subtract 10 seconds from timer
+    timeLeft-10
   }
   answerChoice.innerHTML = ""
   questionIndex++
   questionsContainer()
 }
 
+function answerStopFunction () {
+    if(correctTimeout===true) {
+      clearTimeout
+    }
+    correctUserChoice.setAttribute("class","hide")
+}
 
 
-
-
-
+    //remove hide from alldone container 
+function gameOver() {
+  if(timeLeft===75 || questionIndex.length===1) {
+    allDoneContainerEl.removeAttribute("class","hide")
+  }
+}
 
 function startQuiz () {
   firstPageEl.setAttribute("class","hide")
