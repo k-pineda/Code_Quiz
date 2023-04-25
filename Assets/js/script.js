@@ -121,17 +121,17 @@ function checkAnswer(){
   questionsContainer()
 }
 
-function answerStopFunction () {
-    if(correctTimeout===true) {
-      clearTimeout
-    }
-    correctUserChoice.setAttribute("class","hide")
-}
+//function answerStopFunction () {
+   // if(correctTimeout===true) {
+     // clearTimeout
+    //}
+    //correctUserChoice.setAttribute("class","hide")
+//}
 
 
     //remove hide from alldone container 
 function gameOver() {
-  if(timeLeft===75 || questionIndex.length===1) {
+  if(timeLeft===75 || questionIndex.length===3) {
     allDoneContainerEl.removeAttribute("class","hide")
   }
 }
