@@ -9,10 +9,12 @@ var questionTitle = document.querySelector(".question-title");
 var answerChoice = document.querySelector(".answer-choices");
 var correctUserChoice = document.querySelector(".correct");
 var wrongUserChoice = document.querySelector(".wrong");
+
 var allDoneContainerEl = document.querySelector(".all-done-container");
 var finalScore = document.querySelector(".final-score");
 var userNameInput = document.querySelector(".name-input");
 var submitBtn = document.querySelector(".submit-button");
+
 var userHighScoresEl = document.querySelector(".view-highscore-container");
 var userInitialsInput = document.querySelector("h5");
 var goBackBtn = document.querySelector(".goback-button");
@@ -142,7 +144,7 @@ function allDoneDisplayed() {
 function highScoreDisplayed(){
   allDoneContainerEl.setAttribute("class", "hide");
   userHighScoresEl.removeAttribute("class", "hide");
-  userInitialsInput.innerHTML = localStorage.getItem('value');
+  userInitialsInput.innerHTML = localStorage.getItem('value') + " - " + finalScore.textContent;
 }
 
 function userInitials () {
@@ -162,13 +164,18 @@ function startQuiz() {
   questionsDisplayed();
 }
 
+function restartQuiz () {
+  userHighScoresEl.setAttribute("class", "hide");
+  firstPageEl.removeAttribute("class", "hide");
+}
+
 startQuizBtn.addEventListener("click", startQuiz);
 
 userNameInput.addEventListener("keyup",userInitials);
 
 submitBtn.addEventListener("click",highScoreDisplayed);
 
-//goBackBtn.addEventListener("click", ) //return to start of quiz page
+goBackBtn.addEventListener("click", restartQuiz);
 
 clearHighScoreBtn.addEventListener("click", clearUserInput)
 
