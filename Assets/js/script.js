@@ -15,6 +15,9 @@ var userNameInput = document.querySelector(".name-input");
 var submitBtn = document.querySelector(".submit-button");
 var userHighScoresEl = document.querySelector(".view-highscore-container");
 var userInitialsInput = document.querySelector("h5");
+var goBackBtn = document.querySelector(".goback-button");
+var clearHighScoreBtn = document.querySelector(".clearhighscore-button");
+
 
 var startQuizBtn = document = document.getElementById("startbtn");
 
@@ -146,6 +149,11 @@ function userInitials () {
   localStorage.setItem('value', userNameInput.value);
 }
 
+function clearUserInput (){
+  localStorage.clear('value');
+  userInitialsInput.innerHTML = "";
+}
+
 
 function startQuiz() {
   firstPageEl.setAttribute("class", "hide")
@@ -159,6 +167,11 @@ startQuizBtn.addEventListener("click", startQuiz);
 userNameInput.addEventListener("keyup",userInitials);
 
 submitBtn.addEventListener("click",highScoreDisplayed);
+
+//goBackBtn.addEventListener("click", ) //return to start of quiz page
+
+clearHighScoreBtn.addEventListener("click", clearUserInput)
+
 
 
 
