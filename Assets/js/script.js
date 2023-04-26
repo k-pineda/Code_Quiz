@@ -114,14 +114,11 @@ function checkAnswer(){
   else
   {
         //subtract 10 seconds from timer
-    //subtract (() => 
-    //{
-      //var currentTime = timeLeft.value
-      //var wrongTimePenalty = 10
-
-      //return currentTime - wrongTimePenalty
-    //}
-    //)
+      var currentTime = timeLeft
+      var wrongTimePenalty = 10
+    var subtract = function(currentTime, wrongTimePenalty) {
+      return currentTime - wrongTimePenalty;
+    };
     wrongUserChoice.removeAttribute("class", "hide")
     setTimeout(function (){
       wrongUserChoice.setAttribute("class","hide")
