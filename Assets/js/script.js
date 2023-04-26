@@ -106,13 +106,16 @@ function checkAnswer(){
     console.log("correct")
     //remove hide from correct for 2 seconds and rehide (setTimeout) 
     correctUserChoice.removeAttribute("class", "hide")
-    correctTimeout=setTimeout("correct", 2000)
-    //correctUserChoice.setAttribute("class","hide")
+    setTimeout(function (){
+      correctUserChoice.setAttribute("class","hide")
+    }, 1000)
   }
   else{
     console.log("nope")
     wrongUserChoice.removeAttribute("class", "hide")
-    wrongTimeout=setTimeout("wrong", 1000)
+    setTimeout(function (){
+      wrongUserChoice.setAttribute("class","hide")
+    }, 1000)
     //subtract 10 seconds from timer
     timeLeft-10
   }
