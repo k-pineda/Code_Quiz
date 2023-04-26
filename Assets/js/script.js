@@ -129,6 +129,11 @@ function allDoneDisplayed() {
   if (questionIndex === 4) {
     allDoneContainerEl.removeAttribute("class", "hide")
     questionsContainerEl.setAttribute("class", "hide")
+    //timer stops 
+    timerEl.textContent = "";
+    clearInterval(countdown)
+    // grab timeleft and add that number to final score
+    finalScore.textContent= timeLeft;
   }
 }
 
