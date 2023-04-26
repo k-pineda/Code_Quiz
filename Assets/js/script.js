@@ -104,25 +104,42 @@ function questionsDisplayed () {
 }
 
 function checkAnswer(){
-  if(this.value === "true"){
+  if(this.value === "true")
+  {
     correctUserChoice.removeAttribute("class", "hide")
     setTimeout(function (){
       correctUserChoice.setAttribute("class","hide")
     }, 1000)
   }
-  else{
+  else
+  {
+        //subtract 10 seconds from timer
+    //subtract (() => 
+    //{
+      //var currentTime = timeLeft.value
+      //var wrongTimePenalty = 10
+
+      //return currentTime - wrongTimePenalty
+    //}
+    //)
     wrongUserChoice.removeAttribute("class", "hide")
     setTimeout(function (){
       wrongUserChoice.setAttribute("class","hide")
     }, 1000)
-    //subtract 10 seconds from timer
   }
   answerChoice.innerHTML = ""
   questionIndex++
+  allDoneDisplayed()
   questionsDisplayed()
 }
 
-    //remove hide from alldone container when user answers final question
+    //remove hide from alldone container when user answers final question 
+function allDoneDisplayed () {
+  if (questionIndex === 4) {
+    allDoneContainerEl.removeAttribute("class","hide")
+    questionsContainerEl.setAttribute("class","hide")
+  }
+}
 
 
 function startQuiz () {
