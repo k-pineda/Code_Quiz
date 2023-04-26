@@ -97,6 +97,7 @@ function countdown() {
 var questionIndex = 0;
 
 function questionsDisplayed() {
+  if (questionIndex <= 3) {
   displayCurrentQuestion = questions[questionIndex];
   questionTitle.textContent = displayCurrentQuestion.title;
 
@@ -108,6 +109,7 @@ function questionsDisplayed() {
     choiceBtn.onclick = checkAnswer
     answerChoice.append(choiceBtn)
   });
+}
 }
 
 function checkAnswer() {
