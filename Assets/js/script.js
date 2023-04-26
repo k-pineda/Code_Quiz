@@ -167,8 +167,7 @@ function startQuiz() {
 }
 
 function restartQuiz () {
-  userHighScoresEl.setAttribute("class", "hide");
-  firstPageEl.removeAttribute("class", "hide");
+  location.reload();
 }
 
 startQuizBtn.addEventListener("click", startQuiz);
