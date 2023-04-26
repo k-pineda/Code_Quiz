@@ -13,6 +13,8 @@ var allDoneContainerEl = document.querySelector(".all-done-container");
 var finalScore = document.querySelector(".final-score");
 var userNameInput = document.querySelector(".name-input");
 var submitBtn = document.querySelector(".submit-button");
+var userHighScoresEl = document.querySelector(".view-highscore-container");
+var userHighScoreInput = document.querySelector("h5");
 
 var startQuizBtn = document = document.getElementById("startbtn");
 
@@ -130,8 +132,12 @@ function allDoneDisplayed() {
     allDoneContainerEl.removeAttribute("class", "hide")
     questionsContainerEl.setAttribute("class", "hide")
     // grab timeleft and add that number to final score
-    finalScore.textContent= timeLeft;
+    finalScore.textContent= timeLeft; 
   }
+}
+
+function highScoreDisplayed(){
+  
 }
 
 
