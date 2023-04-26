@@ -14,7 +14,7 @@ var finalScore = document.querySelector(".final-score");
 var userNameInput = document.querySelector(".name-input");
 var submitBtn = document.querySelector(".submit-button");
 var userHighScoresEl = document.querySelector(".view-highscore-container");
-var userHighScoreInput = document.querySelector("h5");
+var userInitialsInput = document.querySelector("h5");
 
 var startQuizBtn = document = document.getElementById("startbtn");
 
@@ -137,7 +137,13 @@ function allDoneDisplayed() {
 }
 
 function highScoreDisplayed(){
-  
+  allDoneContainerEl.setAttribute("class", "hide");
+  userHighScoresEl.removeAttribute("class", "hide");
+  userInitialsInput.innerHTML = localStorage.getItem('value');
+}
+
+function userInitials () {
+  localStorage.setItem('value', userNameInput.value);
 }
 
 
@@ -149,6 +155,10 @@ function startQuiz() {
 }
 
 startQuizBtn.addEventListener("click", startQuiz);
+
+userNameInput.addEventListener("keyup",userInitials);
+
+submitBtn.addEventListener("click",highScoreDisplayed);
 
 
 
