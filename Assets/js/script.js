@@ -20,6 +20,8 @@ var userInitialsInput = document.querySelector("h5");
 var goBackBtn = document.querySelector(".goback-button");
 var clearHighScoreBtn = document.querySelector(".clearhighscore-button");
 
+var highScoresH2 = document.querySelector("#highScores")
+
 
 var startQuizBtn = document = document.getElementById("startbtn");
 
@@ -180,7 +182,11 @@ goBackBtn.addEventListener("click", restartQuiz);
 
 clearHighScoreBtn.addEventListener("click", clearUserInput)
 
-
+highScoresH2.addEventListener('click', function (){
+  userHighScoresEl.removeAttribute("class", "hide");
+  document.querySelector('#whole-thing').classList.add('hide');
+  userInitialsInput.innerHTML = localStorage.getItem('value') + " - " + finalScore.textContent;
+})
 
 
 

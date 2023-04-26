@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Code Quiz</title>
-        <link rel="stylesheet" href="./Assets/css/style.css">
-    </head>
-    <body>
-        <div class="score-container">
-            <h3 id="highScores">View Highscores</h3>
-            <h3 id="timer"></h3>
-        </div>      
-    <div class="firstPage">
-       <h1 id="firstPrompt">Coding Quiz Challenge</h1>
-       <h2 id="subheader">
-        Try to answer the following code-related questions within the 
-        time limit. Keep in mind that incorrect answers will penalize your score time by 
-        ten seconds!
-       </h2>
-        <button id="startbtn">Start Quiz</button>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./Assets/css/style.css">
+</head>
+
+<body>
+    <div class="score-container">
+        <h3 id="highScores">View Highscores</h3>
+        <h3 id="timer"></h3>
     </div>
 
-    <div class="questions-container hide">
-        <div class="question-title"></div>
-        <div class="answer-choices"></div>
-        <h2 class="correct hide">Correct!</h2>
-        <h2 class="wrong hide">Wrong!</h2>
-    </div>
+    <div id="whole-thing">
+        <div class="firstPage">
+            <h1 id="firstPrompt">Coding Quiz Challenge</h1>
+            <h2 id="subheader">
+                Try to answer the following code-related questions within the
+                time limit. Keep in mind that incorrect answers will penalize your score time by
+                ten seconds!
+            </h2>
+            <button id="startbtn">Start Quiz</button>
+        </div>
 
-    <div class="all-done-container hide" id="alldone">
-        <h2>All Done!</h2>
-        <h3>Your Score is: <span class="final-score"></span></h3>
-        <input class="name-input" placeholder="Enter Initials">
-        <button class="submit-button">Submit</button>
+        <div class="questions-container hide">
+            <div class="question-title"></div>
+            <div class="answer-choices"></div>
+            <h2 class="correct hide">Correct!</h2>
+            <h2 class="wrong hide">Wrong!</h2>
+        </div>
+
+        <div class="all-done-container hide" id="alldone">
+            <h2>All Done!</h2>
+            <h3>Your Score is: <span class="final-score"></span></h3>
+            <input class="name-input" placeholder="Enter Initials">
+            <button class="submit-button">Submit</button>
+        </div>
     </div>
 
     <div class="view-highscore-container hide" id="viewhighscore">
@@ -43,9 +48,8 @@
         <button class="clearhighscore-button">Clear high scores</button>
     </div>
 
-    
-        <script src="./Assets/js/script.js"></script>
-    </body>
+
+    <script src="./Assets/js/script.js"></script>
+</body>
+
 </html>
-
-
