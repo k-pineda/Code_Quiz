@@ -82,12 +82,13 @@ function countdown() {
       timerEl.textContent = "";
       clearInterval(timeInterval);
       allDoneContainerEl.removeAttribute("class","hide"); //timer hits 0 remove hide from alldone container
+      questionsContainerEl.setAttribute("class","hide")
     }
   }, 1000);
 }
 
 var questionIndex=0;
-function questionsContainer () {
+function questionsDisplayed () {
   displayCurrentQuestion=questions[questionIndex]
   questionTitle.textContent=displayCurrentQuestion.title
 
@@ -104,7 +105,6 @@ function questionsContainer () {
 function checkAnswer(){
   if(this.value === "true"){
     console.log("correct")
-    //remove hide from correct for 2 seconds and rehide (setTimeout) 
     correctUserChoice.removeAttribute("class", "hide")
     setTimeout(function (){
       correctUserChoice.setAttribute("class","hide")
@@ -113,24 +113,17 @@ function checkAnswer(){
   else{
     console.log("nope")
     wrongUserChoice.removeAttribute("class", "hide")
+    subtract
     setTimeout(function (){
       wrongUserChoice.setAttribute("class","hide")
     }, 1000)
     //subtract 10 seconds from timer
-    timeLeft-10
+    
   }
   answerChoice.innerHTML = ""
   questionIndex++
-  questionsContainer()
+  questionsDisplayed()
 }
-
-//function answerStopFunction () {
-   // if(correctTimeout===true) {
-     // clearTimeout
-    //}
-    //correctUserChoice.setAttribute("class","hide")
-//}
-
 
     //remove hide from alldone container 
 function gameOver() {
@@ -143,7 +136,7 @@ function startQuiz () {
   firstPageEl.setAttribute("class","hide")
   questionsContainerEl.removeAttribute("class","hide")
   countdown();
-  questionsContainer();
+  questionsDisplayed();
 }
 
 startQuizBtn.addEventListener("click", startQuiz);
