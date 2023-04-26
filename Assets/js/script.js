@@ -78,7 +78,7 @@ function countdown() {
     timeLeft--;
     timerEl.textContent = "Time: " + timeLeft;
 
-    if (timeLeft <= 0) {
+    if (timeLeft <= 0 || questionIndex === 4) {
       timerEl.textContent = "";
       clearInterval(timeInterval);
       allDoneContainerEl.removeAttribute("class", "hide"); //timer hits 0 remove hide from alldone container
@@ -129,9 +129,6 @@ function allDoneDisplayed() {
   if (questionIndex === 4) {
     allDoneContainerEl.removeAttribute("class", "hide")
     questionsContainerEl.setAttribute("class", "hide")
-    //timer stops 
-    timerEl.textContent = "";
-    clearInterval(countdown)
     // grab timeleft and add that number to final score
     finalScore.textContent= timeLeft;
   }
