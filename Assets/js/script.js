@@ -88,9 +88,10 @@ function countdown() {
 }
 
 var questionIndex=0;
+
 function questionsDisplayed () {
-  displayCurrentQuestion=questions[questionIndex]
-  questionTitle.textContent=displayCurrentQuestion.title
+  displayCurrentQuestion=questions[questionIndex];
+  questionTitle.textContent=displayCurrentQuestion.title;
 
 
   displayCurrentQuestion.choices.forEach(userChoice => {
@@ -104,33 +105,25 @@ function questionsDisplayed () {
 
 function checkAnswer(){
   if(this.value === "true"){
-    console.log("correct")
     correctUserChoice.removeAttribute("class", "hide")
     setTimeout(function (){
       correctUserChoice.setAttribute("class","hide")
     }, 1000)
   }
   else{
-    console.log("nope")
     wrongUserChoice.removeAttribute("class", "hide")
-    subtract
     setTimeout(function (){
       wrongUserChoice.setAttribute("class","hide")
     }, 1000)
     //subtract 10 seconds from timer
-    
   }
   answerChoice.innerHTML = ""
   questionIndex++
   questionsDisplayed()
 }
 
-    //remove hide from alldone container 
-function gameOver() {
-  if(timeLeft===75 || questionIndex.length===3) {
-    allDoneContainerEl.removeAttribute("class","hide")
-  }
-}
+    //remove hide from alldone container when user answers final question
+
 
 function startQuiz () {
   firstPageEl.setAttribute("class","hide")
