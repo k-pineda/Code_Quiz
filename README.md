@@ -10,10 +10,10 @@ As a student in the beginning stages of learning Javascript, grasping the basic 
 ## Usage
 
 To use this webpage, there is a start quiz button to start the quiz and timer. 
-When clicking on the start quiz button, the first question will appear and the timer will start counting down from 75 seconds. Under the questions multiple choice options will appear and after clicking on the choice a correct or wrong message will show. After the last question choice option is clicked the all done page will appear, the timer will stop and the score will be displayed. Under the score there will be a text box saying "Enter Initials" after entering click on the submit button to store the score and initals. On the last page the initials and score next to it will show and underneath a button to re-start the quiz or clear the score and initials. 
+When clicking on the start quiz button, the first question will appear and the timer will start counting down from 75 seconds. Under the questions multiple choice options will appear and after clicking on the choice a correct or wrong message will show. After the last question choice option is clicked the all done page will appear, the timer will stop and the score will be displayed. Under the score there will be a text box saying "Enter Initials" after entering click on the submit button to store the score and initals. On the last page the initials and score next to it will show and underneath a button to re-start the quiz or clear the score and initials. To view the score and initials again after re-start quiz is clicked, on the top left of the page click on "View Highscores".
 
 
-![Demo of Code Quiz](./imgs/Javascript_Password_Generator_Demo.gif)
+![Demo of Code Quiz](./Assets/Code_Quiz_Demo.gif)
 
 [Code Quiz Webpage](https://k-pineda.github.io/Code_Quiz/)
 
