@@ -155,8 +155,13 @@ function userInitials () {
   localStorage.setItem('value', userNameInput.value);
 }
 
+function userScore (){
+  localStorage.setItem("score", finalScore.textContent)
+}
+
 function clearUserInput (){
   localStorage.clear('value');
+  localStorage.clear('score');
   userInitialsInput.innerHTML = "";
 }
 
@@ -174,7 +179,10 @@ function restartQuiz () {
 
 startQuizBtn.addEventListener("click", startQuiz);
 
-userNameInput.addEventListener("keyup",userInitials);
+userNameInput.addEventListener("keyup",function(){
+  userInitials ()
+  userScore ()
+});
 
 submitBtn.addEventListener("click",highScoreDisplayed);
 
@@ -185,7 +193,7 @@ clearHighScoreBtn.addEventListener("click", clearUserInput)
 highScoresH2.addEventListener('click', function (){
   userHighScoresEl.removeAttribute("class", "hide");
   document.querySelector('#whole-thing').classList.add('hide');
-  userInitialsInput.innerHTML = localStorage.getItem('value') + " - " + finalScore.textContent;
+  userInitialsInput.innerHTML = localStorage.getItem('value') + " - " + localStorage.getItem("score");
 })
 
 
